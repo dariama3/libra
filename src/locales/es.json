@@ -21,5 +21,6 @@
   "add_description": "Añadir una descripción...",
   "cancel": "Cancelar",
   "save_changes": "Guardar cambios",
-  "create_task": "Crear tarea"
+  "create_task": "Crear tarea",
+  "library": "Biblioteca"
 }

@@ -4,14 +4,16 @@ import { useTheme } from '../composables/useTheme'
 import Button from 'primevue/button'
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
+import { House, CalendarHeart, Clapperboard, ListCheck } from 'lucide-vue-next'
 
 const { t } = useI18n()
 const { isDark, toggle } = useTheme()
 
 const links = computed(() => [
-  { label: t('dashboard'), to: '/', icon: '▦' },
-  { label: t('calendar'), to: '/calendar', icon: '⊟' },
-  { label: t('todo_list'), to: '/todo', icon: '⚗' },
+  { label: t('dashboard'), to: '/', icon: House },
+  { label: t('calendar'), to: '/calendar', icon: CalendarHeart },
+  { label: t('todo_list'), to: '/todo', icon: ListCheck },
+  { label: t('library'), to: '/library', icon: Clapperboard },
 ])
 </script>
 
@@ -29,7 +31,7 @@ const links = computed(() => [
         class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
         active-class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-medium"
       >
-        <span>{{ link.icon }}</span>
+        <component :is="link.icon" class="w-5 h-5" />
         <span>{{ link.label }}</span>
       </RouterLink>
     </nav>

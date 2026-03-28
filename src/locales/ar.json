@@ -21,5 +21,6 @@
   "add_description": "أضف وصفًا...",
   "cancel": "إلغاء",
   "save_changes": "حفظ التغييرات",
-  "create_task": "إنشاء مهمة"
+  "create_task": "إنشاء مهمة",
+  "library": "المكتبة"
 }

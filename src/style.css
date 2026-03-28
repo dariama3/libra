@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./assets/styles/lang-select-override.css";
 @import "./assets/styles/dialog-override.css";
+@import "./assets/styles/card-override.css";
 @variant dark (&:where(.dark, .dark *));
 
 html,

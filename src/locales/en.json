@@ -21,5 +21,6 @@
   "add_description": "Add a description...",
   "cancel": "Cancel",
   "save_changes": "Save Changes",
-  "create_task": "Create Task"
+  "create_task": "Create Task",
+  "library": "Library"
 }
