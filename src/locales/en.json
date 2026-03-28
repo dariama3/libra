@@ -22,5 +22,11 @@
   "cancel": "Cancel",
   "save_changes": "Save Changes",
   "create_task": "Create Task",
-  "library": "Library"
+  "library": "Library",
+  "add_video": "Add Video",
+  "edit_video": "Edit Video",
+  "video_title": "Video Title",
+  "video_link": "Video Link",
+  "duration": "Duration",
+  "category": "Category"
 }

@@ -22,5 +22,11 @@
   "cancel": "إلغاء",
   "save_changes": "حفظ التغييرات",
   "create_task": "إنشاء مهمة",
-  "library": "المكتبة"
+  "library": "المكتبة",
+  "add_video": "إضافة فيديو",
+  "edit_video": "تعديل الفيديو",
+  "video_title": "عنوان الفيديو",
+  "video_link": "رابط الفيديو",
+  "duration": "المدة",
+  "category": "الفئة"
 }

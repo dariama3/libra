@@ -32,6 +32,25 @@ const changeLanguage = (e: { value: string }) => {
           optionLabel="label"
           optionValue="value"
           @change="changeLanguage"
+          :pt="{
+            root: {
+              class:
+                'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 h-9 px-2 flex items-center',
+            },
+            label: { class: 'text-gray-700 dark:text-gray-300 text-sm font-medium' },
+            list: {
+              class: 'bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-1',
+            },
+            option: ({ context }) => ({
+              class: [
+                'px-3 py-1.5 text-xs transition-colors cursor-pointer rounded-md',
+                context.focused ? 'bg-gray-100 dark:bg-gray-800' : '',
+                context.selected
+                  ? 'text-[var(--color-brand)] font-bold'
+                  : 'text-gray-700 dark:text-gray-300',
+              ],
+            }),
+          }"
         />
         <router-link
           to="/login"
