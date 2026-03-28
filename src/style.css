@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 html,
 body,
 #app {
@@ -10,12 +12,22 @@ body,
 }
 
 :root {
+  /* Theme */
+  --bg-base: #f3f4f6;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f9fafb;
+  --border-color: #e5e7eb;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+
   /* Brand colors */
   --color-brand: #646cff;
   --color-brand-hover: #535bf2;
   --color-brand-active: #4248d4;
   --color-brand-light: #eeeeff;
   --color-brand-subtle: #f5f5ff;
+  --color-cell-hover: #f0f0f0;
 
   /* FullCalendar theme */
   --fc-border-color: var(--color-gray-200);
@@ -34,6 +46,29 @@ body,
   --fc-button-active-border-color: var(--color-brand-active);
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+html.dark {
+  --bg-base: #111827;
+  --bg-surface: #1f2937;
+  --bg-subtle: #1a2332;
+  --border-color: #374151;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #6b7280;
+
+  --color-brand-subtle: #1e1b4b;
+  --color-brand-light: #312e81;
+  --color-cell-hover: #2d3748;
+
+  --fc-border-color: #374151;
+  --fc-today-bg-color: #1e1b4b;
+  --fc-neutral-bg-color: #1f2937;
+  --fc-list-event-hover-bg-color: #1e1b4b;
+  --fc-highlight-color: #312e81;
+}
+
+html.dark :root {
   line-height: 1.5;
   font-weight: 400;
 
@@ -69,29 +104,6 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card {
-  padding: 2em;
-}
-
 #app {
   margin: 0 auto;
   text-align: center;
@@ -104,8 +116,5 @@ button:focus-visible {
   }
   a:hover {
     color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
   }
 }
