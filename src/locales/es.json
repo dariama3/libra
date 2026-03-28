@@ -1,0 +1,12 @@
+{
+  "hello": "Hola",
+  "welcome": "Bienvenido de nuevo a Libra. Aquí tienes tu resumen de hoy.",
+  "morning": "Buenos días",
+  "afternoon": "Buenas tardes",
+  "evening": "Buenas noches",
+  "dashboard": "Tablero",
+  "calendar": "Calendario",
+  "todo": "Lista de tareas",
+  "light_mode": "Modo claro",
+  "dark_mode": "Modo oscuro"
+}

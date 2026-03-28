@@ -1,0 +1,12 @@
+{
+  "hello": "Hello",
+  "welcome": "Welcome back to Libra. Here's your overview for today.",
+  "morning": "Good morning",
+  "afternoon": "Good afternoon",
+  "evening": "Good evening",
+  "dashboard": "Dashboard",
+  "calendar": "Calendar",
+  "todo": "Todo List",
+  "light_mode": "Light mode",
+  "dark_mode": "Dark mode"
+}

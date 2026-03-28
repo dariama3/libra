@@ -1,5 +1,21 @@
 <script setup lang="ts">
 import Sidebar from '../components/Sidebar.vue'
+import Select from 'primevue/select'
+import { useI18n } from 'vue-i18n'
+import { ref } from 'vue'
+const { locale } = useI18n()
+import { setLocale } from '../i18n'
+
+const languages = [
+  { label: 'EN', value: 'en' },
+  { label: 'ES', value: 'es' },
+  { label: 'AR', value: 'ar' },
+]
+const selectedLanguage = ref(locale.value)
+
+const changeLanguage = (e: { value: string }) => {
+  setLocale(e.value)
+}
 </script>
 
 <template>
@@ -8,8 +24,15 @@ import Sidebar from '../components/Sidebar.vue'
 
     <div class="flex-1 flex flex-col">
       <header
-        class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-end shadow-sm"
+        class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-end gap-4 shadow-sm"
       >
+        <Select
+          v-model="selectedLanguage"
+          :options="languages"
+          optionLabel="label"
+          optionValue="value"
+          @change="changeLanguage"
+        />
         <router-link
           to="/login"
           class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"

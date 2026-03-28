@@ -2,14 +2,17 @@
 import { RouterLink } from 'vue-router'
 import { useTheme } from '../composables/useTheme'
 import Button from 'primevue/button'
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 
+const { t } = useI18n()
 const { isDark, toggle } = useTheme()
 
-const links = [
-  { label: 'Dashboard', to: '/', icon: '▦' },
-  { label: 'Calendar', to: '/calendar', icon: '⊟' },
-  { label: 'Todo List', to: '/todo', icon: '⚗' },
-]
+const links = computed(() => [
+  { label: t('dashboard'), to: '/', icon: '▦' },
+  { label: t('calendar'), to: '/calendar', icon: '⊟' },
+  { label: t('todo'), to: '/todo', icon: '⚗' },
+])
 </script>
 
 <template>
@@ -42,7 +45,7 @@ const links = [
       ]"
     >
       <span>{{ isDark ? '☀️' : '🌙' }}</span>
-      <span>{{ isDark ? 'Light mode' : 'Dark mode' }}</span>
+      <span>{{ isDark ? t('light_mode') : t('dark_mode') }}</span>
     </Button>
   </aside>
 </template>
