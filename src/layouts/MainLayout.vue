@@ -7,8 +7,14 @@ import Sidebar from '../components/Sidebar.vue'
     <Sidebar />
 
     <div class="flex-1 flex flex-col">
-      <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-end shadow-sm">
-        <router-link to="/login" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">Logout</router-link>
+      <header
+        class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-end shadow-sm"
+      >
+        <router-link
+          to="/login"
+          class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+          >Login ?</router-link
+        >
       </header>
 
       <main class="flex-1 p-6">

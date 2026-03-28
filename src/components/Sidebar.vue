@@ -8,6 +8,7 @@ const { isDark, toggle } = useTheme()
 const links = [
   { label: 'Dashboard', to: '/', icon: '▦' },
   { label: 'Calendar', to: '/calendar', icon: '⊟' },
+  { label: 'Todo List', to: '/todo', icon: '⚗' },
 ]
 </script>
 
