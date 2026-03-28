@@ -10,6 +10,29 @@ body,
 }
 
 :root {
+  /* Brand colors */
+  --color-brand: #646cff;
+  --color-brand-hover: #535bf2;
+  --color-brand-active: #4248d4;
+  --color-brand-light: #eeeeff;
+  --color-brand-subtle: #f5f5ff;
+
+  /* FullCalendar theme */
+  --fc-border-color: var(--color-gray-200);
+  --fc-today-bg-color: var(--color-brand-subtle);
+  --fc-neutral-bg-color: var(--color-gray-100);
+  --fc-list-event-hover-bg-color: var(--color-brand-subtle);
+  --fc-highlight-color: var(--color-brand-light);
+  --fc-event-bg-color: var(--color-brand);
+  --fc-event-border-color: var(--color-brand-hover);
+  --fc-event-text-color: #fff;
+  --fc-button-bg-color: var(--color-brand);
+  --fc-button-border-color: var(--color-brand);
+  --fc-button-hover-bg-color: var(--color-brand-hover);
+  --fc-button-hover-border-color: var(--color-brand-hover);
+  --fc-button-active-bg-color: var(--color-brand-active);
+  --fc-button-active-border-color: var(--color-brand-active);
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
