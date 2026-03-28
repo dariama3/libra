@@ -63,11 +63,11 @@ function close() {
       },
       content: { class: 'bg-white dark:bg-gray-900 px-6 py-4' },
       footer: {
-        class: 'bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 px-6 py-4',
+        class: 'bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700',
       },
     }"
   >
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 my-2">
       <div class="flex flex-col gap-1">
         <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
           {{ t('task_title') }}

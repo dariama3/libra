@@ -54,7 +54,7 @@ function onDrop(e: DragEvent) {
       @dragover="onDragOver"
       @dragleave="onDragLeave"
       @drop="onDrop"
-      class="flex flex-col gap-3 flex-1 rounded-2xl p-3 min-h-64 transition-colors"
+      class="flex flex-col gap-3 flex-1 rounded-2xl p-3 min-h-64 transition-colors max-h-140 overflow-y-auto"
       :class="
         isDragOver
           ? 'bg-[var(--color-brand-subtle)] border-2 border-dashed border-[var(--color-brand)]'
