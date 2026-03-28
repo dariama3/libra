@@ -21,9 +21,9 @@ function openEdit(task: Task) {
 }
 
 const columns = [
-  { status: 'todo' as const,        label: 'To Do',       accent: '#9ca3af' },
+  { status: 'todo' as const, label: 'To Do', accent: '#9ca3af' },
   { status: 'in-progress' as const, label: 'In Progress', accent: '#646cff' },
-  { status: 'done' as const,        label: 'Done',        accent: '#22c55e' },
+  { status: 'done' as const, label: 'Done', accent: '#22c55e' },
 ]
 </script>
 
@@ -34,7 +34,9 @@ const columns = [
       <div class="flex items-center justify-between">
         <div>
           <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Todo List</h1>
-          <p class="text-gray-500 dark:text-gray-400 mt-1 text-sm">Drag tasks between columns to update their status.</p>
+          <p class="text-gray-500 dark:text-gray-400 mt-1 text-sm">
+            Drag tasks between columns to update their status.
+          </p>
         </div>
         <button
           @click="openCreate"
