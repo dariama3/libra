@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import MainLayout from '../layouts/MainLayout.vue'
-import DatePicker from 'primevue/datepicker'
-import { ref } from 'vue'
-
-const date = ref<Date | null>(null)
+import AppCalendar from '../components/AppCalendar.vue'
 </script>
 
 <template>
@@ -14,7 +11,7 @@ const date = ref<Date | null>(null)
         <p class="text-gray-500 mt-1">Select a date to get started.</p>
       </div>
 
-      <DatePicker v-model="date" inline show-week class="w-full" />
+      <AppCalendar />
     </div>
   </MainLayout>
 </template>
