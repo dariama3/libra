@@ -2,6 +2,8 @@
 @import "./assets/styles/lang-select-override.css";
 @import "./assets/styles/dialog-override.css";
 @import "./assets/styles/card-override.css";
+@import "./assets/styles/select-override.css";
+@import "./assets/styles/tabs-override.css";
 @variant dark (&:where(.dark, .dark *));
 
 html,
@@ -95,8 +97,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -107,8 +107,7 @@ h1 {
 }
 
 #app {
-  margin: 0 auto;
-  text-align: center;
+  margin: 0;
 }
 
 @media (prefers-color-scheme: light) {

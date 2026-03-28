@@ -27,6 +27,7 @@ const changeLanguage = (e: { value: string }) => {
         class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-end gap-4 shadow-sm"
       >
         <Select
+          class="lang-select"
           v-model="selectedLanguage"
           :options="languages"
           optionLabel="label"

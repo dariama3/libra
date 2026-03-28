@@ -19,7 +19,7 @@ const links = computed(() => [
 
 <template>
   <aside
-    class="w-56 min-h-screen flex flex-col py-6 px-4 shadow-sm bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700"
+    class="w-56 h-screen sticky top-0 flex flex-col py-6 px-4 shadow-sm bg-white dark:bg-gray-900 border-r rtl:border-r-0 rtl:border-l border-gray-200 dark:border-gray-700"
   >
     <div class="text-xl font-bold mb-8 px-2 text-gray-800 dark:text-gray-100">Libra</div>
 

@@ -10,6 +10,7 @@ export interface VideoItem {
   duration: string
   category: VideoCategory
   createdAt: string
+  hashtags: string[]
 }
 
 const STORAGE_KEY = 'libra-videos'
@@ -33,6 +34,7 @@ export function useVideos() {
       ...video,
       id: crypto.randomUUID(),
       createdAt: new Date().toISOString(),
+      hashtags: video.hashtags ?? [],
     })
   }
 

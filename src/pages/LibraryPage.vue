@@ -12,6 +12,7 @@ import TabPanels from 'primevue/tabpanels'
 import TabPanel from 'primevue/tabpanel'
 import { computed, ref } from 'vue'
 import { useVideos, type VideoItem } from '../composables/useVideos'
+import FilterPanel from '../components/video/FilterPanel.vue'
 const { t } = useI18n()
 
 const { videos } = useVideos()
@@ -24,6 +25,11 @@ function openCreate() {
 }
 
 const activeTab = ref('0')
+const filters = ref({
+  search: '',
+  duration: null,
+  hashtags: [],
+})
 const tabs = {
   '0': 'sport',
   '1': 'social',
@@ -31,7 +37,38 @@ const tabs = {
 }
 
 const filteredVideos = computed(() => {
-  return videos.value.filter((v) => v.category === tabs[activeTab.value])
+  return videos.value.filter((v) => {
+    const matchesTab = v.category === tabs[activeTab.value]
+    if (!matchesTab) return false
+
+    const matchesSearch = v.title.toLowerCase().includes(filters.value.search.toLowerCase())
+    if (!matchesSearch) return false
+
+    if (filters.value.duration) {
+      const parts = v.duration.split(':').map(Number)
+      let minutes = 0
+      if (parts.length === 3) {
+        // HH:MM:SS
+        minutes = parts[0] * 60 + parts[1] + parts[2] / 60
+      } else if (parts.length === 2) {
+        // MM:SS
+        minutes = parts[0] + parts[1] / 60
+      } else {
+        minutes = parts[0] || 0
+      }
+
+      if (filters.value.duration === 'short' && minutes >= 5) return false
+      if (filters.value.duration === 'medium' && (minutes < 5 || minutes > 15)) return false
+      if (filters.value.duration === 'long' && minutes <= 15) return false
+    }
+
+    if (filters.value.hashtags.length > 0) {
+      const matchesHashtags = filters.value.hashtags.every((tag) => v.hashtags?.includes(tag))
+      if (!matchesHashtags) return false
+    }
+
+    return true
+  })
 })
 </script>
 <template>
@@ -49,24 +86,13 @@ const filteredVideos = computed(() => {
     </div>
 
     <Tabs v-model:value="activeTab">
-      <TabList
-        :pt="{
-          root: { class: 'bg-transparent border-gray-200 dark:border-gray-700' },
-          tab: ({ context }) => ({
-            class: [
-              'transition-all duration-300 font-medium px-6 py-3 border-b-2 -mb-px',
-              context.active
-                ? 'text-[var(--color-brand)] border-[var(--color-brand)]'
-                : 'text-gray-500 dark:text-gray-400 border-transparent hover:text-gray-700 dark:hover:text-gray-200 hover:border-gray-300 dark:hover:border-gray-600',
-            ],
-          }),
-        }"
-      >
+      <TabList>
         <Tab value="0">Sport</Tab>
         <Tab value="1">Social</Tab>
         <Tab value="2">Tech</Tab>
       </TabList>
-      <TabPanels class="min-h-[320px] bg-transparent">
+      <TabPanels class="h-[680px] bg-transparent overflow-scroll">
+        <FilterPanel v-model:filters="filters" />
         <TabPanel value="0" class="bg-transparent">
           <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"

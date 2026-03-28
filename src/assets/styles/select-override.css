@@ -1,0 +1,67 @@
+.p-select,
+.p-multiselect,
+.p-inputtext {
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.p-select:hover,
+.p-multiselect:hover,
+.p-inputtext:hover {
+    border-color: var(--color-brand);
+}
+
+.p-select:not(.p-disabled).p-focus,
+.p-multiselect:not(.p-disabled).p-focus,
+.p-inputtext:not(.p-disabled):focus {
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 2px var(--color-brand-light);
+    outline: none;
+}
+
+/* Dropdown panels */
+.p-select-panel,
+.p-multiselect-panel {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.p-select-option,
+.p-multiselect-option {
+    color: var(--text-primary);
+    padding: 0.5rem 0.75rem;
+    transition: background-color 0.2s;
+}
+
+.p-select-option.p-highlight,
+.p-multiselect-option.p-highlight {
+    background-color: var(--color-brand-subtle);
+    color: var(--color-brand);
+}
+
+.p-select-option:not(.p-highlight):not(.p-disabled).p-focus,
+.p-multiselect-option:not(.p-highlight):not(.p-disabled).p-focus {
+    background-color: var(--bg-base);
+}
+
+.p-select-option:not(.p-highlight):not(.p-disabled):hover,
+.p-multiselect-option:not(.p-highlight):not(.p-disabled):hover {
+    background-color: var(--bg-base);
+}
+
+/* MultiSelect Chip styling */
+.p-multiselect-label .p-chip {
+    background-color: var(--color-brand-subtle);
+    color: var(--color-brand);
+}
+
+/* Dark mode specific adjustments if needed */
+.dark .p-select-panel,
+.dark .p-multiselect-panel {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}

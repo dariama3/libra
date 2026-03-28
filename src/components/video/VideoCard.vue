@@ -73,9 +73,16 @@ const getEmbedUrl = (url: string): string => {
     <template #subtitle>
       <div class="flex flex-col gap-2 mx-1.5">
         <p class="text-sm line-clamp-2">{{ props.item.description }}</p>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 flex-wrap">
           <span class="text-[10px] uppercase tracking-wider font-bold text-[var(--color-brand)]">
             {{ props.item.category }}
+          </span>
+          <span
+            v-for="tag in props.item.hashtags"
+            :key="tag"
+            class="text-[10px] bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 px-1.5 py-0.5 rounded"
+          >
+            #{{ tag }}
           </span>
         </div>
       </div>
