@@ -5,6 +5,8 @@ import TaskColumn from '../components/todo/TaskColumn.vue'
 import TaskDialog from '../components/todo/TaskDialog.vue'
 import type { Task } from '../composables/useTasks'
 import { useTasks } from '../composables/useTasks'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const { tasksByStatus } = useTasks()
 const dialogVisible = ref(false)
@@ -21,9 +23,9 @@ function openEdit(task: Task) {
 }
 
 const columns = [
-  { status: 'todo' as const, label: 'To Do', accent: '#9ca3af' },
-  { status: 'in-progress' as const, label: 'In Progress', accent: '#646cff' },
-  { status: 'done' as const, label: 'Done', accent: '#22c55e' },
+  { status: 'todo' as const, label: t('todo'), accent: '#9ca3af' },
+  { status: 'in-progress' as const, label: t('in_progress'), accent: '#646cff' },
+  { status: 'done' as const, label: t('done'), accent: '#22c55e' },
 ]
 </script>
 
@@ -33,9 +35,9 @@ const columns = [
       <!-- Header -->
       <div class="flex items-center justify-between">
         <div>
-          <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Todo List</h1>
+          <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100">{{ t('todo_list') }}</h1>
           <p class="text-gray-500 dark:text-gray-400 mt-1 text-sm">
-            Drag tasks between columns to update their status.
+            {{ t('drag_and_drop') }}
           </p>
         </div>
         <button
@@ -44,7 +46,7 @@ const columns = [
           :style="{ backgroundColor: 'var(--color-brand)' }"
         >
           <span class="text-base leading-none">+</span>
-          New Task
+          {{ t('add_task') }}
         </button>
       </div>
 

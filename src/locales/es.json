@@ -6,7 +6,20 @@
   "evening": "Buenas noches",
   "dashboard": "Tablero",
   "calendar": "Calendario",
-  "todo": "Lista de tareas",
+  "todo_list": "Lista de tareas",
   "light_mode": "Modo claro",
-  "dark_mode": "Modo oscuro"
+  "dark_mode": "Modo oscuro",
+  "todo": "Por hacer",
+  "in_progress": "En progreso",
+  "done": "Hecho",
+  "add_task": "Agregar tarea",
+  "edit_task": "Editar tarea",
+  "drag_and_drop": "Arrastra las tareas entre columnas para actualizar su estado.",
+  "drop_here": "Suelta las tareas aquí",
+  "task_title": "Título de la tarea",
+  "description": "Descripción",
+  "add_description": "Añadir una descripción...",
+  "cancel": "Cancelar",
+  "save_changes": "Guardar cambios",
+  "create_task": "Crear tarea"
 }

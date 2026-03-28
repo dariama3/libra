@@ -11,7 +11,7 @@ const { isDark, toggle } = useTheme()
 const links = computed(() => [
   { label: t('dashboard'), to: '/', icon: '▦' },
   { label: t('calendar'), to: '/calendar', icon: '⊟' },
-  { label: t('todo'), to: '/todo', icon: '⚗' },
+  { label: t('todo_list'), to: '/todo', icon: '⚗' },
 ])
 </script>
 

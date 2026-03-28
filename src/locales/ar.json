@@ -6,7 +6,20 @@
   "evening": "مساء الخير",
   "dashboard": "لوحة القيادة",
   "calendar": "التقويم",
-  "todo": "قائمة المهام",
+  "todo_list": "قائمة المهام",
   "light_mode": "الوضع الفاتح",
-  "dark_mode": "الوضع الداكن"
+  "dark_mode": "الوضع الداكن",
+  "todo": "للقيام به",
+  "in_progress": "قيد التنفيذ",
+  "done": "تم",
+  "add_task": "إضافة مهمة",
+  "edit_task": "تعديل المهمة",
+  "drag_and_drop": "اسحب المهام بين الأعمدة لتحديث حالتها.",
+  "drop_here": "أسقط المهام هنا",
+  "task_title": "عنوان المهمة",
+  "description": "الوصف",
+  "add_description": "أضف وصفًا...",
+  "cancel": "إلغاء",
+  "save_changes": "حفظ التغييرات",
+  "create_task": "إنشاء مهمة"
 }

@@ -4,7 +4,8 @@ import { z } from 'zod'
 import Dialog from 'primevue/dialog'
 import type { Task } from '../../composables/useTasks'
 import { useTasks } from '../../composables/useTasks'
-
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const props = defineProps<{ task?: Task }>()
 const visible = defineModel<boolean>('visible')
 
@@ -52,7 +53,7 @@ function close() {
   <Dialog
     v-model:visible="visible"
     modal
-    :header="isEdit ? 'Edit Task' : 'New Task'"
+    :header="isEdit ? t('edit_task') : t('create_task')"
     :style="{ width: '28rem' }"
     :pt="{
       root: { class: 'rounded-2xl overflow-hidden' },
@@ -68,21 +69,25 @@ function close() {
   >
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-1">
-        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">Title</label>
+        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
+          {{ t('task_title') }}
+        </label>
         <input
           v-model="title"
           type="text"
-          placeholder="Task title"
+          :placeholder="t('task_title')"
           class="w-full px-3 py-2 rounded-lg border text-sm outline-none transition-colors bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-[var(--color-brand)] focus:ring-2 focus:ring-[var(--color-brand-light)]"
         />
         <span v-if="errors.title" class="text-xs text-red-500">{{ errors.title }}</span>
       </div>
 
       <div class="flex flex-col gap-1">
-        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">Description</label>
+        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
+          {{ t('description') }}
+        </label>
         <textarea
           v-model="description"
-          placeholder="Add a description..."
+          :placeholder="t('add_description')"
           rows="4"
           class="w-full px-3 py-2 rounded-lg border text-sm outline-none transition-colors resize-none bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-[var(--color-brand)] focus:ring-2 focus:ring-[var(--color-brand-light)]"
         />
@@ -95,14 +100,14 @@ function close() {
           @click="close"
           class="px-4 py-2 rounded-lg text-sm font-medium transition-colors text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
         >
-          Cancel
+          {{ t('cancel') }}
         </button>
         <button
           @click="submit"
           class="px-4 py-2 rounded-lg text-sm font-medium text-white transition-colors hover:opacity-90"
           :style="{ backgroundColor: 'var(--color-brand)' }"
         >
-          {{ isEdit ? 'Save Changes' : 'Create Task' }}
+          {{ isEdit ? t('save_changes') : t('create_task') }}
         </button>
       </div>
     </template>

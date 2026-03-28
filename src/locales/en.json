@@ -6,7 +6,20 @@
   "evening": "Good evening",
   "dashboard": "Dashboard",
   "calendar": "Calendar",
-  "todo": "Todo List",
+  "todo_list": "Todo List",
   "light_mode": "Light mode",
-  "dark_mode": "Dark mode"
+  "dark_mode": "Dark mode",
+  "todo": "To do",
+  "in_progress": "In progress",
+  "done": "Done",
+  "add_task": "Add Task",
+  "edit_task": "Edit Task",
+  "drag_and_drop": "Drag tasks between columns to update their status.",
+  "drop_here": "Drop tasks here",
+  "task_title": "Task Title",
+  "description": "Description",
+  "add_description": "Add a description...",
+  "cancel": "Cancel",
+  "save_changes": "Save Changes",
+  "create_task": "Create Task"
 }
