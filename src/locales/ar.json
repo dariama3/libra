@@ -28,5 +28,13 @@
   "video_title": "عنوان الفيديو",
   "video_link": "رابط الفيديو",
   "duration": "المدة",
-  "category": "الفئة"
+  "category": "الفئة",
+  "hashtags": "الوسوم",
+  "select_hashtags": "اختر الوسوم",
+  "select_duration": "اختر المدة",
+  "any": "أي",
+  "filters": "الفلاتر",
+  "search_name": "البحث بالاسم",
+  "enter_video_title": "أدخل عنوان الفيديو..",
+  "min": "دقيقة"
 }

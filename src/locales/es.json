@@ -28,5 +28,13 @@
   "video_title": "Título del vídeo",
   "video_link": "Enlace del vídeo",
   "duration": "Duración",
-  "category": "Categoría"
+  "category": "Categoría",
+  "hashtags": "Hashtags",
+  "select_hashtags": "Seleccionar hashtags",
+  "select_duration": "Seleccionar duración",
+  "any": "Cualquiera",
+  "filters": "Filtros",
+  "search_name": "Buscar por nombre",
+  "enter_video_title": "Introduce el título del video..",
+  "min": "min"
 }

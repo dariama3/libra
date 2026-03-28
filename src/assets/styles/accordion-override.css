@@ -1,0 +1,21 @@
+.p-accordion .p-accordionpanel {
+    background: transparent !important;
+    transition: background-color 0.2s ease, padding 0.2s ease;
+    padding: 0 1rem;
+}
+
+.p-accordion .p-accordionpanel.p-accordionpanel-active {
+    background: white !important;
+    border-radius: 8px;
+}
+
+.p-accordion .p-accordionpanel .p-accordionheader {
+    background: transparent !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.p-accordion .p-accordionpanel .p-accordioncontent {
+    background: transparent !important;
+}
+

@@ -4,6 +4,7 @@
 @import "./assets/styles/card-override.css";
 @import "./assets/styles/select-override.css";
 @import "./assets/styles/tabs-override.css";
+@import "./assets/styles/accordion-override.css";
 @variant dark (&:where(.dark, .dark *));
 
 html,

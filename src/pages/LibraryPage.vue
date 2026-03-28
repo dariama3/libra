@@ -15,13 +15,24 @@ import { useVideos, type VideoItem } from '../composables/useVideos'
 import FilterPanel from '../components/video/FilterPanel.vue'
 const { t } = useI18n()
 
-const { videos } = useVideos()
+const { videos, deleteVideo } = useVideos()
 const dialogVisible = ref(false)
 const editingVideo = ref<VideoItem | undefined>()
 
 function openCreate() {
   editingVideo.value = undefined
   dialogVisible.value = true
+}
+
+function openEdit(video: VideoItem) {
+  editingVideo.value = video
+  dialogVisible.value = true
+}
+
+function handleDelete(id: string) {
+  if (confirm('Are you sure you want to delete this video?')) {
+    deleteVideo(id)
+  }
 }
 
 const activeTab = ref('0')
@@ -98,7 +109,13 @@ const filteredVideos = computed(() => {
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
             v-if="filteredVideos.length"
           >
-            <VideoCard v-for="video in filteredVideos" :key="video.title" :item="video" />
+            <VideoCard
+              v-for="video in filteredVideos"
+              :key="video.id"
+              :item="video"
+              @edit="openEdit"
+              @delete="handleDelete"
+            />
           </div>
           <div v-else class="text-center text-gray-500 dark:text-gray-400 mt-4">Add video</div>
         </TabPanel>
@@ -107,7 +124,13 @@ const filteredVideos = computed(() => {
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
             v-if="filteredVideos.length"
           >
-            <VideoCard v-for="video in filteredVideos" :key="video.title" :item="video" />
+            <VideoCard
+              v-for="video in filteredVideos"
+              :key="video.id"
+              :item="video"
+              @edit="openEdit"
+              @delete="handleDelete"
+            />
           </div>
         </TabPanel>
         <TabPanel value="2" class="bg-transparent">
@@ -115,7 +138,13 @@ const filteredVideos = computed(() => {
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
             v-if="filteredVideos.length"
           >
-            <VideoCard v-for="video in filteredVideos" :key="video.title" :item="video" />
+            <VideoCard
+              v-for="video in filteredVideos"
+              :key="video.id"
+              :item="video"
+              @edit="openEdit"
+              @delete="handleDelete"
+            />
           </div>
         </TabPanel>
       </TabPanels>

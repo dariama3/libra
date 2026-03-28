@@ -27,10 +27,10 @@ const filters = defineModel<{
 })
 
 const durationOptions = computed(() => [
-  { label: t('Any'), value: null },
-  { label: t('< 5 min'), value: 'short' },
-  { label: t('5-15 min'), value: 'medium' },
-  { label: t('> 20 min'), value: 'long' },
+  { label: t('any'), value: null },
+  { label: `< 5 ${t('min')}`, value: 'short' },
+  { label: `5-20 ${t('min')}`, value: 'medium' },
+  { label: `> 20 ${t('min')}`, value: 'long' },
 ])
 
 const allHashtags = computed(() => {
@@ -47,25 +47,25 @@ const allHashtags = computed(() => {
     <Accordion value="0">
       <AccordionPanel value="0">
         <AccordionHeader
-          class="text-lg font-semibold bg-transparent border-none py-2 px-0 hover:text-[var(--color-brand)] transition-colors"
+          class="text-lg font-semibold border-none py-2 hover:text-[var(--color-brand)] transition-colors"
         >
           <div class="flex items-center gap-2">
             <i class="pi pi-filter" />
-            <span>{{ t('Filters') }}</span>
+            <span>{{ t('filters') }}</span>
           </div>
         </AccordionHeader>
-        <AccordionContent class="bg-transparent border-none p-0">
+        <AccordionContent class="border-none p-0">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-4">
             <div class="flex flex-col gap-1.5">
               <label
                 for="search"
                 class="text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] px-1"
-                >{{ t('Search by name') }}</label
+                >{{ t('search_name') }}</label
               >
               <InputText
                 id="search"
                 v-model="filters.search"
-                :placeholder="t('Enter video title...')"
+                :placeholder="t('enter_video_title')"
                 class="w-full"
               />
             </div>
@@ -74,7 +74,7 @@ const allHashtags = computed(() => {
               <label
                 for="duration"
                 class="text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] px-1"
-                >{{ t('Duration') }}</label
+                >{{ t('duration') }}</label
               >
               <Select
                 id="duration"
@@ -82,7 +82,7 @@ const allHashtags = computed(() => {
                 :options="durationOptions"
                 optionLabel="label"
                 optionValue="value"
-                :placeholder="t('Select duration')"
+                :placeholder="t('select_duration')"
                 class="w-full"
               />
             </div>
@@ -91,7 +91,7 @@ const allHashtags = computed(() => {
               <label
                 for="hashtags"
                 class="text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] px-1"
-                >{{ t('Hashtags') }}</label
+                >{{ t('hashtags') }}</label
               >
               <MultiSelect
                 id="hashtags"
@@ -99,7 +99,7 @@ const allHashtags = computed(() => {
                 :options="allHashtags"
                 optionLabel="label"
                 optionValue="value"
-                :placeholder="t('Select hashtags')"
+                :placeholder="t('select_hashtags')"
                 :maxSelectedLabels="3"
                 class="w-full"
                 display="chip"

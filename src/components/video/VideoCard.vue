@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import Card from 'primevue/card'
+import Button from 'primevue/button'
 import type { VideoItem } from '../../composables/useVideos'
 import { useI18n } from 'vue-i18n'
+import { Pencil, Trash2 } from 'lucide-vue-next'
 
 const { t } = useI18n()
 const props = defineProps<{ item: VideoItem }>()
+const emit = defineEmits<{
+  (e: 'edit', item: VideoItem): void
+  (e: 'delete', id: string): void
+}>()
 
 const getEmbedUrl = (url: string): string => {
   try {
@@ -61,13 +67,29 @@ const getEmbedUrl = (url: string): string => {
       </div>
     </template>
     <template #title>
-      <div class="flex items-center justify-between mx-1.5">
+      <div class="flex items-center justify-between mx-1.5 gap-2">
         <span class="truncate">{{ props.item.title }}</span>
-        <span
-          class="text-xs font-normal text-gray-500 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
-        >
-          {{ props.item.duration }}
-        </span>
+        <div class="flex items-center gap-1">
+          <Button
+            unstyled
+            @click="emit('edit', props.item)"
+            class="p-1.5 rounded-lg text-gray-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors cursor-pointer"
+          >
+            <Pencil class="w-4 h-4" />
+          </Button>
+          <Button
+            unstyled
+            @click="emit('delete', props.item.id)"
+            class="p-1.5 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors cursor-pointer"
+          >
+            <Trash2 class="w-4 h-4" />
+          </Button>
+          <span
+            class="text-xs font-normal text-gray-500 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded ml-1"
+          >
+            {{ props.item.duration }}
+          </span>
+        </div>
       </div>
     </template>
     <template #subtitle>
